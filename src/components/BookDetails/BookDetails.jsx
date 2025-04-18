@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { addToDb, addToWish } from '../../utilities/addToDb';
 
 const BookDetails = () => {
     const { bookId } = useParams();
@@ -12,6 +13,15 @@ const BookDetails = () => {
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
     console.log(tags);
     // console.log(book, bookData, bookId, id);
+
+
+    const handleMarkRead = (id) => {
+        addToDb(id);
+    }
+    const handleWishList = (id) => {
+        addToWish(id);
+    }
+
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
@@ -48,8 +58,8 @@ const BookDetails = () => {
                         </div>
                     </div>
                     <div>
-                        <button className='btn mr-2'>Mark as Read</button>
-                        <button className="btn btn-accent text-white">Wishlist</button>
+                        <button onClick={() => handleMarkRead(id)} className='btn mr-2'>Mark as Read</button>
+                        <button onClick={() => handleWishList(id)} className="btn btn-accent text-white">Wishlist</button>
                     </div>
                 </div>
             </div>
