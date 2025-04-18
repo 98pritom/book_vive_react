@@ -13,17 +13,16 @@ const Book = ({ book }) => {
                         alt={bookName} />
                 </figure>
                 <div className="card-body">
-                    <div className='flex justify-center gap-1.5'>
-                        {
-                            tags.map((tag, idx) => <button key={idx} className="btn btn-xs bg-green-100 text-green-600 rounded-4xl border-0 p-3">{tag}</button>)
-                        }
-                    </div>
-
                     <h2 className="card-title">
                         {bookName}
                         <div className="badge badge-secondary">NEW</div>
                     </h2>
                     <p>By: {author}</p>
+                    <div className='flex justify-start gap-1.5'>
+                        {
+                            tags.map((tag, idx) => <button key={idx} className="btn btn-xs bg-green-100 text-green-600 rounded-4xl border-0 p-3">{tag}</button>)
+                        }
+                    </div>
                     <div className='border-t-1 border-dashed mt-2 mb-2'></div>
                     <div className="card-actions justify-between items-center">
                         <div className="text-lg">{category}</div>
