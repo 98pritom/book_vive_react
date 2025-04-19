@@ -1,11 +1,10 @@
-import React, { PureComponent } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 const PagesToRead = () => {
     const allBooks = useLoaderData();
     return (
-        <div className='my-5 w-full h-[600px]'>
+        <div className='my-5 w-full h-[400px] sm:h-[500px] md:h-[600px] flex justify-center items-center px-4'>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                     data={allBooks}
